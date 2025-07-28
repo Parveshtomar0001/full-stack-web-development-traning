@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+    <script>
+        // internal javascript
+        function handleInput() {
+            // here we take input from age input field by id
+            let day = document.getElementById("day").value;
+
+            // here find the age category based on the age input 
+            let yourCategory = "Variable";
+
+
+            if (day == 1) {
+                Day = "Monday";
+            } else if (day == 2) {
+                Day = "Tuesday";
+            } else if (day == 3) {
+                Day = "Wednesday";
+            } else if (day == 4) {
+                Day = "Thursday";
+            } else if (day == 5) {
+                Day = "Friday";
+            } else if (day == 6) {
+                Day = "Saturday";
+            } else if (day == 7) {
+                Day = "Sunday";
+            } else {
+                Day = "Invalid day";
+            }
+
+            // here we set the result in the p tag with id result
+            document.getElementById("result").innerText = yourCategory;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Day checker</h1>
+    <label>Enter Day Number (1-7)</label>
+    <!-- age input field -->
+    <input type="number" id="day" placeholder="Enter day">
+    <button onclick="handleInput()">check</button>
+
+    <!-- p tag field -->
+    <p id="result"></p>
+</body>
+
+
+</html>
