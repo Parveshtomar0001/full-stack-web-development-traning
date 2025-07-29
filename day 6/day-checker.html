@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         // internal javascript
@@ -9,25 +10,25 @@
             let day = document.getElementById("day").value;
 
             // here find the age category based on the age input 
-            let yourCategory = "Variable";
+            let yourCategory = "";
 
 
             if (day == 1) {
-                Day = "Monday";
+                yourCategory = "Monday";
             } else if (day == 2) {
-                Day = "Tuesday";
+                yourCategory = "Tuesday";
             } else if (day == 3) {
-                Day = "Wednesday";
+                yourCategory = "Wednesday";
             } else if (day == 4) {
-                Day = "Thursday";
+                yourCategory = "Thursday";
             } else if (day == 5) {
-                Day = "Friday";
+                yourCategory = "Friday";
             } else if (day == 6) {
-                Day = "Saturday";
+                yourCategory = "Saturday";
             } else if (day == 7) {
-                Day = "Sunday";
+                yourCategory = "Sunday";
             } else {
-                Day = "Invalid day";
+                yourCategory = "Invalid day";
             }
 
             // here we set the result in the p tag with id result
@@ -37,15 +38,21 @@
 
 </head>
 
-<body>
-    <h1>Day checker</h1>
-    <label>Enter Day Number (1-7)</label>
-    <!-- age input field -->
-    <input type="number" id="day" placeholder="Enter day">
-    <button onclick="handleInput()">check</button>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-sm text-center">
+    <h1 class="text-2xl font-bold mb-4 text-blue-700">Day Checker</h1>
 
-    <!-- p tag field -->
-    <p id="result"></p>
+    <label for="day" class="block text-gray-600 mb-2">Enter Day Number (1-7)</label>
+    <input type="number" id="day" placeholder="Enter day"
+           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4" />
+
+    <button onclick="handleInput()"
+            class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+      Check
+    </button>
+
+    <p id="result" class="mt-4 text-lg font-medium text-green-600"></p>
+  </div>
 </body>
 
 
