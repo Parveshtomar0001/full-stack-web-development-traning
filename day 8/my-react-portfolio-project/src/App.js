@@ -4,7 +4,7 @@ import { Skills } from "./Skills"
 function App() {
     return (
         <div>
-            <h1>app page</h1>
+            <h1>My Portfolio</h1>
           
         <About/>
         <Skills/>    

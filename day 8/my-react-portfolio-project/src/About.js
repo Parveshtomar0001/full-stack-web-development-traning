@@ -1,7 +1,7 @@
 function About() {
     return (
-        <div>
-            <h1>About page</h1>
+        <div >
+            <h1>About Me</h1>
            <p> I am parvesh pursuing b-tech from p.i.e.t <br></br>
                I am from Gudhan Rohtak,HARYANA
            </p>
