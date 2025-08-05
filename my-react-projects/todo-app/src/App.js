@@ -1,10 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import Header from "./Header"
+import HomePage from "./HomePage"
+import Footer from "./Footer"
+import AddToDoPage from "./AddToDoPage"
+import ShowToDoPage from "./ShowToDoPage"
+import DoneToDoPage from "./DoneToDoPage"
+function App() {
+  return (
+    <div>
+   
+    <Header/>
+    <HomePage/>
+   <AddToDoPage/>
+   <ShowToDoPage/>
+   <DoneToDoPage/>
+    <Footer/>
+    </div>
+  
+  
+  )
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export default App;
