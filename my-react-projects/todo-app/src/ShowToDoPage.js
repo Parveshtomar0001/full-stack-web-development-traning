@@ -2,10 +2,21 @@ function ShowTodoPage(props) {
     let todoArr = props.todo;
 
     function handleClick(e, todoId) {
-        // delete todo from todoArr where id=todoId
-        todoArr = todoArr.filter(todo => todo.id !== todoId);
-        props.setTodo(todoArr);
-        alert("Todo Completed");
+        console.log("here")
+        let newTodoArr = []
+
+        for (let i = 0; i < todoArr.length; i++) {
+            newTodoArr[i] = todoArr[i]
+
+            if (todoArr[i].id === todoId) {
+                console.log("here2")
+                newTodoArr[i].status = "completed";
+                newTodoArr[i].completedDate = new Date()
+                console.log(JSON.stringify(newTodoArr[i]))
+            }
+        }
+
+        props.setTodo(newTodoArr);
     }
 
     return (
@@ -21,6 +32,7 @@ function ShowTodoPage(props) {
                 <tbody>
                     {
                         todoArr.map((value, index) => (
+                            value.status === "pending" && (
                             <tr class="hover:bg-purple-100 transition">
                                 <td class="border px-4 py-2 text-center">{value.todoTitle}</td>
                                 <td class="border px-4 py-2 text-center">{value.dueDate}</td>
@@ -33,6 +45,7 @@ function ShowTodoPage(props) {
                                     </button>
                                 </td>
                             </tr>
+                            )
                         ))
                     }
                 </tbody>

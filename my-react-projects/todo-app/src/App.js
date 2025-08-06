@@ -9,35 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom" // ✅ Added thi
 
 function App() {
   //todo is a type of arrays of object
-  let [todo,setTodo] = useState([
-   {
-      "id": 1,
-      "todoTitle": "buy grocery",
-      "dueDate": "05/08/2025",
-      "completeDate": "",
-      "status": "pending"
-    },
-    {
-      "id": 2,
-      "todoTitle": "go to gym",
-      "dueDate": "05/08/2025",
-      "completeDate": "",
-      "status": "pending"
-    },
-    {
-      "id": 3,
-      "todoTitle": "learn react",
-      "dueDate": "05/08/2025",
-      "completeDate": "",
-      "status": "pending"
-    },
-    {
-      "id": 4,
-      "todoTitle": "play cricket",
-      "dueDate": "05/08/2025",
-      "completeDate": "",
-      "status": "pending"
-    }])
+  let [todo,setTodo] = useState([])
 
      return (
     <BrowserRouter>
@@ -45,9 +17,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/todo-add" element={<AddToDoPage />} />
+        <Route path="/todo-add" element={<AddToDoPage todo={todo} setTodo={setTodo} />} />
         <Route path="/todo-show" element={<ShowToDoPage todo={todo} setTodo={setTodo} />} />
-        <Route path="/todo-done" element={<DoneToDoPage />} />
+        <Route path="/todo-done" element={<DoneToDoPage todo={todo} setTodo={setTodo} />} />
       </Routes>
 
       <Footer />

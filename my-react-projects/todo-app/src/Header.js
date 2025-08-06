@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function Header() {
     return (
         <div className="bg-gray-100 shadow-md p-4">
-            <nav className="flex justify-center space-x-4">
+            <nav className="flex justify-center space-x-5">
             <Link to="/todo-add">
                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add</button>
                 </Link>
